@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Jumbotron from './components/Jumbotron'
 import { Route } from 'react-router-dom'
 import ActiveArticle from './components/ActiveArticle'
+import Login from './components/Login'
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <Route exact path="/" render={() => <Login/> } />
         <Route exact path="/articles" render={() => {
           return(
             <Fragment>
