@@ -9,7 +9,7 @@ class ArticleContainer extends Component {
 
     render() {
         return(
-            <div className="album py-5 bg-light">
+            <div className="album py-5">
                 <div className="container">
                     <div className="row">
                         {this.renderArticles()}

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import fetchAllArticles from './actions/fetchAllArticles'
 import ArticlesContainer from './containers/ArticleContainer'
 import Navbar from './components/Navbar'
+import Jumbotron from './components/Jumbotron'
 
 class App extends Component {
 
@@ -14,7 +15,8 @@ class App extends Component {
     return (
       <Fragment>
         <Navbar />
-        <main role="main" className="container">
+        <main role="main">
+          <Jumbotron/>
           <ArticlesContainer articles={this.props.articles} />
         </main>
       </Fragment>
