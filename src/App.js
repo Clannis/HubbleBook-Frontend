@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import fetchAllArticles from './actions/fetchAllArticles'
 import ArticlesContainer from './containers/ArticleContainer'
-import Title from './components/Title'
+import Navbar from './components/Navbar'
 
 class App extends Component {
 
@@ -12,10 +12,12 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <Title />
-        <ArticlesContainer articles={this.props.articles} />
-      </main>
+      <Fragment>
+        <Navbar />
+        <main role="main" className="container">
+          <ArticlesContainer articles={this.props.articles} />
+        </main>
+      </Fragment>
     );
   }
 }
