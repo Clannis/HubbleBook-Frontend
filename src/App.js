@@ -17,16 +17,25 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Route exact path="/" render={() => {
-          <Fragment>
-            <Navbar />
-            <main role="main">
-              <Jumbotron/>
-              <ArticlesContainer articles={this.props.articles} />
-            </main>
-          </Fragment>
+        <Route exact path="/articles" render={() => {
+          return(
+            <Fragment>
+              <Navbar />
+              <main role="main">
+                <Jumbotron/>
+                <ArticlesContainer articles={this.props.articles} />
+              </main>
+            </Fragment>
+          )
         }}/> 
-        <Route path={'/:article_id'} render={(routerProps) => <ActiveArticle {...routerProps} articles={this.props.articles}/>}/>
+        <Route path={'/articles/:article_id'} render={(routerProps) => {
+          return(
+            <Fragment>
+              <Navbar />
+              <ActiveArticle {...routerProps} articles={this.props.articles} />
+            </Fragment>
+          )
+        }} />
       </Fragment>
     );
   }
