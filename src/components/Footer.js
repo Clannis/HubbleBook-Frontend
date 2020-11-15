@@ -3,7 +3,7 @@ const Footer = () => {
         <footer className="footer mt-auto py-3 bg-dark fixed-bottom">
             <div className="container text-white">
                 <p className="float-right"><a href="#">Back to top</a></p>
-                <p>All articles are provided by <a href="http://hubblesite.org">hubblesite.org</a> API.</p>
+                <p>All articles are provided by the <a href="http://hubblesite.org/api/documentation" target="blank">API</a> run by <a href="http://hubblesite.org" target="_blank">hubblesite.org</a>.</p>
                 <p> 2020 James R. Dodds  ·  <a href="/about">About Us</a></p>
                 <p></p>
             </div>
