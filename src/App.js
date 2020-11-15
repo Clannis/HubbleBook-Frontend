@@ -7,6 +7,7 @@ import Jumbotron from './components/Jumbotron'
 import { Route } from 'react-router-dom'
 import ActiveArticle from './components/ActiveArticle'
 import Login from './components/Login'
+import Loading from './components/Loading'
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <Loading requesting={this.props.requesting} />
         <Route exact path="/" render={() => <Login/> } />
         <Route exact path="/articles" render={() => {
           return(
