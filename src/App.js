@@ -24,7 +24,7 @@ class App extends Component {
             <Fragment>
               <Navbar />
               <main role="main">
-                <Jumbotron/>
+                <Jumbotron header={"Welcome To The Universe"} body={"Display some longer subtext for more information to the user such as: I am creating this jumbotron to see if i can fix my verticle spacing issue."}/>
                 <ArticlesContainer articles={this.props.articles} />
               </main>
             </Fragment>
@@ -34,7 +34,7 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              <ActiveArticle {...routerProps} articles={this.props.articles} />
+              <ActiveArticle {...routerProps} />
             </Fragment>
           )
         }} />

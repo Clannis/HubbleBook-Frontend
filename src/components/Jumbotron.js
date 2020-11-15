@@ -5,9 +5,9 @@ class Jumbotron extends Component {
         return(
             <div className="jumbotron">
                 <div className="container">
-                    <h1 className="display-3">Welcome To The Universe</h1>
-                    <p>Display some longer sub text for more information to the user such as: I am creating this jumbotron to see if i can fix my verticle spacing issue.</p>
-                    <div className="btn btn-primary btn-lg" role="button">Learn More</div>
+                    <h1 className="display-3">{this.props.header}</h1>
+                    <p>{this.props.body}</p>
+                    <a href={this.props.href} className="btn btn-primary btn-lg" role="button">Learn More</a>
                 </div>
             </div>
         )
