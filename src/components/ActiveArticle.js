@@ -14,12 +14,15 @@ class ActiveArticle extends Component {
         let article = this.props.activeArticle
 
         return(
-            <div className="container">
-                <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                    <div className="col p-4 d-flex flex-column position-static">
-                        <img src={article.keystone_image_1x} alt={article.news_id}/>
+            <div>
+            <div className="carousel slide" id="myCarousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src={article.keystone_image_1x} alt={article.news_id} preserveAspectRatio="xMidYMid slice" style={{width: "100%", height: "100%"}}/>
                     </div>
                 </div>
+            </div>
+            <div className="container">
                 <Jumbotron header={article.name} body={article.abstract} href={article.url} target="_blank"/>
                 <div className="my-3 p-3 bg-white rounded shadow-sm">
                     <h6 className="border-bottom border-gray pb-2 mb-0">Comments</h6>
@@ -52,6 +55,7 @@ class ActiveArticle extends Component {
                         <button type="submit" className="btn btn-primary mb-2">Post</button>
                     </form>
                 </div>
+            </div>
             </div>
         )
     }
