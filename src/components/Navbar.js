@@ -1,4 +1,3 @@
-import { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
@@ -14,10 +13,10 @@ const Navbar = () => {
                         <Link to={'/articles'}><div className=" btn nav-link">Home</div></Link>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Missions</a>
+                        <div className="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Missions</div>
                         <div className="dropdown-menu" aria-labelledby="dropdown03">
-                            <Link to={'/missions/hubble'}><div className="dropdown-item" href="">Hubble</div></Link>
-                            <Link to={'/missions/james_webb'}><div className="dropdown-item" href="#">James Webb</div></Link>
+                            <Link to={'/missions/hubble'}><div className="dropdown-item">Hubble</div></Link>
+                            <Link to={'/missions/james_webb'}><div className="dropdown-item">James Webb</div></Link>
                         </div>
                     </li>
                 </ul>
