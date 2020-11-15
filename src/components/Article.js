@@ -1,5 +1,6 @@
 import { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
 
 
 class Article extends Component {
@@ -17,7 +18,7 @@ class Article extends Component {
                                     <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
                                 </Link>
                             </div>
-                            <small className="text-muted">[Time Here]</small>
+                            <small className="text-muted">{moment(this.props.article.publication).fromNow()}</small>
                         </div>
                     </div>
                 </div>
