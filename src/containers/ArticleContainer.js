@@ -1,10 +1,18 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
+import fetchAllArticles from '../actions/fetchAllArticles'
 import Article from '../components/Article'
 
 class ArticleContainer extends Component {
 
+    componentDidMount() {
+        this.props.fetchAllArticles()
+      }
+
     renderArticles = () => {
-        return this.props.articles.map((article) => <Article article={article} />)
+        if (this.props.articles.length > 0) {
+            return this.props.articles.map((article) => <Article article={article} />)
+        }
     }
 
     render() {
@@ -19,5 +27,13 @@ class ArticleContainer extends Component {
         )
     }
 }
+
+function mapDispatchToProps(dispatch){
+    return { fetchAllArticles: () => dispatch(fetchAllArticles()) }
+}
   
-  export default ArticleContainer
+const mapStateToProps = (state) => {
+    return {articles: state.articles}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleContainer)
