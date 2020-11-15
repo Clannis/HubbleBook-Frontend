@@ -19,6 +19,9 @@ const Navbar = () => {
                             <Link to={'/missions/james_webb'}><div className="dropdown-item">James Webb</div></Link>
                         </div>
                     </li>
+                    <li className="nav-item active">
+                        <Link to={'/about'}><div className=" btn nav-link">About</div></Link>
+                    </li>
                 </ul>
                 <form className="form-inline mt-2mt-md-0">
                     <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
