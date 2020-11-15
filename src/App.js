@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Loading from './components/Loading'
 import Footer from './components/Footer'
 import MissionContainer from './containers/MissionContainer'
+import About from './components/About'
 
 
 class App extends Component {
@@ -46,6 +47,14 @@ class App extends Component {
               <Navbar />
               <Loading requesting={this.props.requesting} />
               <MissionContainer {...routerProps} articles={this.props.articles}/>
+            </Fragment>
+          )
+        }} />
+        <Route path={'/about'} render={() => {
+          return(
+            <Fragment>
+              <Navbar />
+              <About />
             </Fragment>
           )
         }} />
