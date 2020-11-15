@@ -1,4 +1,4 @@
-export default function articlesReducer(state = {articles: [], requesting: false}, action) {
+export default function articlesReducer(state = {articles: [], requesting: false, activeArticle: {}}, action) {
     switch (action.type) {
         case 'START_ADDING_HUBBLE_ARTICLES_REQUEST':
             return {...state,
@@ -9,6 +9,18 @@ export default function articlesReducer(state = {articles: [], requesting: false
             return {...state,
                 articles: action.articles,
                 requesting: false
+            }
+        case 'START_GETTING_ARTICLE_REQUEST':
+            return {...state,
+                articles: state.articles,
+                requesting: true,
+                activeArticle: {}
+            }
+        case 'ADD_ACTIVE_ARTICLE':
+            return {...state,
+                articles: state.articles,
+                requesting: true,
+                activeArticle: action.article
             }
         default:
             return state
