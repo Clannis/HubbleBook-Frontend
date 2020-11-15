@@ -6,12 +6,13 @@ import fetchMissionArticles from '../actions/fetchMissionArticles'
 class MissionContainer extends Component {
     
     componentDidMount() {
-        console.log(this.props.match.params.mission_name)
         this.props.fetchMissionArticles(this.props.match.params.mission_name)
     }
 
     componentDidUpdate() {
-        this.props.fetchMissionArticles(this.props.match.params.mission_name)
+        if (this.props.articles[0].mission !== this.props.match.params.mission_name) {
+            this.props.fetchMissionArticles(this.props.match.params.mission_name)
+        }
     }
 
     renderArticles = () => {
