@@ -17,7 +17,7 @@ class ActiveArticle extends Component {
             <div className="container">
                 <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
                     <div className="col p-4 d-flex flex-column position-static">
-                        <img src={article.keystone_image_1x} />
+                        <img src={article.keystone_image_1x} alt={article.news_id}/>
                     </div>
                 </div>
                 <Jumbotron header={article.name} body={article.abstract} href={article.url}/>
