@@ -1,7 +1,7 @@
 const About = () => {
     return(
         <div className="container">
-            <div className="row">
+            <div className="row my-3 pg-3 rouded shadow-lg bg-light">
                 <div className="col-lg-8 mx-auto text-center">
                     <img src={process.env.PUBLIC_URL + '/james_dodds.jpeg'} className="bd-placeholder-img rounded-circle" width="140" height="140" alt="James Dodds"/>
                     <h2>James Dodds</h2>
@@ -14,7 +14,12 @@ const About = () => {
                         <li>Distribution/Collection Operator</li>
                         <li>Heavy Equipment Operator</li>
                     </ul>
-                    <p><a class="btn btn-secondary" href="https://github.com/Clannis" role="button">View Portfolio »</a></p>
+                    <p><a class="btn btn-secondary" href="https://github.com/Clannis" role="button">View GitHub Profile »</a></p>
+                </div>
+            </div>
+            <div className="row my-3 pg-3 rouded shadow-lg bg-light">
+                <div className="col-lg-8 mx-auto text-center">
+                    <p>This web app was created for my final portfolio project as part of the Flatiron School Part-Time Online Software Engineering Curriculum.</p>
                 </div>
             </div>
         </div>
