@@ -3,12 +3,14 @@ export default function articlesReducer(state = {articles: [], requesting: false
         case 'START_ADDING_HUBBLE_ARTICLES_REQUEST':
             return {...state,
                 articles: state.articles,
-                requesting: true
+                requesting: true,
+                activeArticle: {}
             }
         case 'ADD_ARTICLES':
             return {...state,
                 articles: action.articles,
-                requesting: false
+                requesting: false,
+                activeArticle: {}
             }
         case 'START_GETTING_ARTICLE_REQUEST':
             return {...state,
@@ -19,7 +21,7 @@ export default function articlesReducer(state = {articles: [], requesting: false
         case 'ADD_ACTIVE_ARTICLE':
             return {...state,
                 articles: state.articles,
-                requesting: true,
+                requesting: false,
                 activeArticle: action.article
             }
         default:
