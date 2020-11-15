@@ -10,6 +10,10 @@ class MissionContainer extends Component {
         this.props.fetchMissionArticles(this.props.match.params.mission_name)
     }
 
+    componentDidUpdate() {
+        this.props.fetchMissionArticles(this.props.match.params.mission_name)
+    }
+
     renderArticles = () => {
         if (this.props.articles[0].mission === this.props.match.params.mission_name) {
             return this.props.articles.map((article) => <Article article={article} />)

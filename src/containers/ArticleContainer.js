@@ -31,9 +31,5 @@ class ArticleContainer extends Component {
 function mapDispatchToProps(dispatch){
     return { fetchAllArticles: () => dispatch(fetchAllArticles()) }
 }
-  
-const mapStateToProps = (state) => {
-    return {articles: state.articles}
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleContainer)
+export default connect(null, mapDispatchToProps)(ArticleContainer)

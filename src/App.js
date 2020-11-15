@@ -26,7 +26,7 @@ class App extends Component {
               <main role="main">
                 <Jumbotron header={"Welcome To The Universe"} body={"As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA."}/>
                 <Loading requesting={this.props.requesting} />
-                <ArticlesContainer />
+                <ArticlesContainer articles={this.props.articles} />
               </main>
             </Fragment>
           )
@@ -36,7 +36,7 @@ class App extends Component {
             <Fragment>
               <Navbar />
               <Loading requesting={this.props.requesting} />
-              <ActiveArticle {...routerProps} />
+              <ActiveArticle {...routerProps} activeArticle={this.props.activeArticle}/>
             </Fragment>
           )
         }} />
@@ -45,7 +45,7 @@ class App extends Component {
             <Fragment>
               <Navbar />
               <Loading requesting={this.props.requesting} />
-              <MissionContainer {...routerProps} />
+              <MissionContainer {...routerProps} articles={this.props.articles}/>
             </Fragment>
           )
         }} />
@@ -56,7 +56,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {requesting: state.requesting}
+  return {articles: state.articles, requesting: state.requesting, activeArticle: state.activeArticle}
 }
 
 export default connect(mapStateToProps)(App);
