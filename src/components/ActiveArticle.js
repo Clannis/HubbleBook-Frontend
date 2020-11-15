@@ -20,7 +20,7 @@ class ActiveArticle extends Component {
                         <img src={article.keystone_image_1x} alt={article.news_id}/>
                     </div>
                 </div>
-                <Jumbotron header={article.name} body={article.abstract} href={article.url}/>
+                <Jumbotron header={article.name} body={article.abstract} href={article.url} target="_blank"/>
                 <div className="my-3 p-3 bg-white rounded shadow-sm">
                     <h6 className="border-bottom border-gray pb-2 mb-0">Comments</h6>
                     <div className="media text-muted pt-3">

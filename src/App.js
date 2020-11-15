@@ -24,7 +24,7 @@ class App extends Component {
             <Fragment>
               <Navbar />
               <main role="main">
-                <Jumbotron header={"Welcome To The Universe"} body={"As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA."}/>
+                <Jumbotron header={"Welcome To The Universe"} body={"As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA."} href="/about"/>
                 <Loading requesting={this.props.requesting} />
                 <ArticlesContainer articles={this.props.articles} />
               </main>

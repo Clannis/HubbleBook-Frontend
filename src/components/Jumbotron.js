@@ -7,7 +7,7 @@ class Jumbotron extends Component {
                 <div className="container">
                     <h1 className="display-3">{this.props.header}</h1>
                     <p>{this.props.body}</p>
-                    <a href={this.props.href} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg" role="button">Learn More</a>
+                    <a href={this.props.href} target={this.props.target} rel="noreferrer" className="btn btn-primary btn-lg" role="button">Learn More</a>
                 </div>
             </div>
         )
