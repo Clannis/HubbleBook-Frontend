@@ -1,10 +1,5 @@
-import { Component, Fragment } from 'react'
-
-class Loading extends Component {
-
-    renderLoading = () => {
-        if (this.props.requesting) {
-            console.log("Now Loading")
+const Loading = (props) => {
+        if (props.requesting) {
             return (
                 <div className="container">
                     <div className="row">
@@ -16,18 +11,8 @@ class Loading extends Component {
             )
         }
         else {
-            console.log("Loaded")
             return null
         }
-    }
-
-    render() {
-        return(
-            <Fragment>
-                {this.renderLoading()}
-            </Fragment>
-        )
-    }
 }
 
 export default Loading
