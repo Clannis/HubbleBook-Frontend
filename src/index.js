@@ -13,6 +13,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import Loading from './components/Loading'
 
 const persistConfig = {
   key: 'root',
@@ -30,7 +31,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <PersistGate persistor={persistor}>
+        <PersistGate persistor={persistor} loading={<Loading/>}>
           <App />
         </PersistGate>
       </Router>
