@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import fetchAllArticles from '../actions/fetchAllArticles'
-import Article from '../components/Article'
+import ArticleCard from '../components/ArticleCard'
 
 class ArticleContainer extends Component {
 
@@ -11,7 +11,7 @@ class ArticleContainer extends Component {
 
     renderArticles = () => {
         if (this.props.articles.length > 0) {
-            return this.props.articles.map((article) => <Article article={article} />)
+            return this.props.articles.map((article) => <ArticleCard article={article} />)
         }
     }
 

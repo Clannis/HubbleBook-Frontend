@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 
 
-class Article extends Component {
+class ArticleCard extends Component {
 
     renderCard = () => {
         return(
@@ -37,4 +37,4 @@ class Article extends Component {
     }
 }
 
-export default Article
+export default ArticleCard

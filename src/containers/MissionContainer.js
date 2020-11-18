@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import Article from '../components/Article'
+import ArticleCard from '../components/ArticleCard'
 import fetchMissionArticles from '../actions/fetchMissionArticles'
 
 class MissionContainer extends Component {
@@ -17,7 +17,7 @@ class MissionContainer extends Component {
 
     renderArticles = () => {
         if (this.props.articles[0].mission === this.props.match.params.mission_name) {
-            return this.props.articles.map((article) => <Article article={article} />)
+            return this.props.articles.map((article) => <ArticleCard article={article} />)
         }
     }
 
