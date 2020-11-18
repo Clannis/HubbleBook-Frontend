@@ -9,7 +9,9 @@ class Article extends Component {
         return(
             <div className="col-md-4">
                 <div className="card mb-4 shadow-sm" style={{width: "18rem"}}>
-                    <img src={this.props.article.thumbnail} className="card-img-top" alt="..."/>
+                    <Link key={this.props.article.news_id} to={`/articles/${this.props.article.news_id}`}>
+                        <img src={this.props.article.thumbnail} className="card-img-top" alt="..."/>
+                    </Link>
                     <div className="card-body">
                         <h5 className="card-title">{this.props.article.name}</h5>
                         <div className="d-flex justify-content-between align-items-center">
