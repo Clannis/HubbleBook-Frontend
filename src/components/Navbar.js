@@ -23,6 +23,9 @@ const Navbar = () => {
                     <li className="nav-item active">
                         <Link to={'/about'}><div className=" btn nav-link">About</div></Link>
                     </li>
+                    <li>
+                        <div className=" btn nav-link">Logout</div>
+                    </li>
                 </ul>
                 <Search/>
             </div>
