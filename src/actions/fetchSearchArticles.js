@@ -1,6 +1,6 @@
 export default function fetchSearchArticles(search) {
     return (dispatch) => {
-      dispatch({ type: 'START_ADDING_ARTICLES_REQUEST' },{
+      dispatch({ type: 'START_SEARCH_ARTICLES_REQUEST' },{
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
