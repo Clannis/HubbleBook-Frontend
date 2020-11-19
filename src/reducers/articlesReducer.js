@@ -22,6 +22,13 @@ export default function articlesReducer(state = {articles: [], requesting: false
                 requesting: false,
                 activeArticle: action.article
             }
+        case 'SEARCH_ARTICLES':
+            return{
+                ...state,
+                articles: action.articles,
+                requesting: false,
+                activeArticle: {}
+            }
         default:
             return state
     }
