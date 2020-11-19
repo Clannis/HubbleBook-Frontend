@@ -29,7 +29,7 @@ const About = () => {
             <div className="row my-3 pg-3 rouded shadow-lg bg-light">
                 <div className="col-lg-8 mx-auto text-center">
                     <p>This web app was created for my final portfolio project as part of the Flatiron School Part-Time Online Software Engineering Curriculum.</p>
-                    <p>All data contained herein comes from <a href="http://hubblesite.org" target="_blank">hubblesite.org</a>'s API <a href="http://hubblesite.org/api/documentation" target="blank">here</a>. Each article provided contains an abstract of the article, a picture, and a url to the full article hosted by hubblesite.org. Any missing information is only reflected by the information missing from the source API.</p>
+                    <p>All data contained herein comes from <a href="http://hubblesite.org" target="_blank" rel="noreferrer">hubblesite.org</a>'s API <a href="http://hubblesite.org/api/documentation" target="blank">here</a>. Each article provided contains an abstract of the article, a picture, and a url to the full article hosted by hubblesite.org. Any missing information is only reflected by the information missing from the source API.</p>
                     <p>This site allows for comments to be made about each article to allow for conversations to take place regarding content. Any and all outside discussions are strongly advised against.</p>
                 </div>
             </div>

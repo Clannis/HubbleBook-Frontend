@@ -10,7 +10,7 @@ class ArticleContainer extends Component {
       }
 
     renderArticles = () => {
-        if (this.props.articles.length > 0) {
+        if (this.props.articles && this.props.articles.length > 0) {
             return this.props.articles.map((article) => <ArticleCard article={article} />)
         }
     }

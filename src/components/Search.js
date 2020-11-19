@@ -14,7 +14,7 @@ class Search extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.fetchSearchArticles(event.target.value)
+        this.props.fetchSearchArticles(event.target.search.value)
     }
 
     render(){
