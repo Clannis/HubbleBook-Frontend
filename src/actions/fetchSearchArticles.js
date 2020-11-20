@@ -9,7 +9,14 @@ export default function fetchSearchArticles(search) {
         body: JSON.stringify({search: search}),
       })
       .then(response => response.json())
-      .then(articles => dispatch({ type: 'SEARCH_ARTICLES', articles }))
+      .then(articles => {
+        if (articles.message) {
+          console.log(articles)
+          dispatch({ type: 'ADD_ERROR', articles })
+        } else {
+          dispatch({ type: 'SEARCH_ARTICLES', articles })
+        }
+      })
     };
   }
 
