@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import ArticleCard from '../components/ArticleCard'
 import fetchMissionArticles from '../actions/fetchMissionArticles'
-import Loading from '../components/Loading'
+import LoadingContainer from './LoadingContainer'
 
 class MissionContainer extends Component {
     
@@ -29,13 +29,7 @@ class MissionContainer extends Component {
     render() {
         if (this.props.requesting) {
             return (
-                <div className="container">
-                    <div className="row">
-                        <div className="col-4 mx-auto">
-                            <Loading/>
-                        </div>
-                    </div>
-                </div>
+                <LoadingContainer/>
             )
         } else {
             return(

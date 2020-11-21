@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import Jumbotron from './Jumbotron'
 import fetchArticle from '../actions/fetchArticle'
-import Loading from './Loading'
+import LoadingContainer from '../containers/LoadingContainer'
 
 class ActiveArticle extends Component {
 
@@ -19,7 +19,7 @@ class ActiveArticle extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-4 mx-auto">
-                            <Loading/>
+                            <LoadingContainer/>
                         </div>
                     </div>
                 </div>
