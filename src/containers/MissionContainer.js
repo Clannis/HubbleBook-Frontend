@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import ArticleCard from '../components/ArticleCard'
 import fetchMissionArticles from '../actions/fetchMissionArticles'
+import Loading from '../components/Loading'
 
 class MissionContainer extends Component {
     
@@ -26,15 +27,19 @@ class MissionContainer extends Component {
     }
 
     render() {
-        return(
-            <div className="album py-5">
-                <div className="container">
-                    <div className="row">
-                        {this.renderArticles()}
+        if (this.props.requesting) {
+            return <Loading/>
+        } else {
+            return(
+                <div className="album py-5">
+                    <div className="container">
+                        <div className="row">
+                            {this.renderArticles()}
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

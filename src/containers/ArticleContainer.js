@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import fetchAllArticles from '../actions/fetchAllArticles'
 import ArticleCard from '../components/ArticleCard'
+import Loading from '../components/Loading'
 
 class ArticleContainer extends Component {
 
@@ -13,22 +14,26 @@ class ArticleContainer extends Component {
         if (this.props.articles && this.props.articles.length > 0) {
             return this.props.articles.map((article) => {
                 return  <div className="col-md-4" key={article.news_id}>
-                            <ArticleCard article={article} />
+                            <ArticleCard article={article}/>
                         </div>
             })
         }
     }
 
     render() {
-        return(
-            <div className="album py-2">
-                <div className="container">
-                    <div className="row">
-                        {this.renderArticles()}
+        if (this.props.requesting) {
+            return <Loading/>
+        } else {
+            return(
+                <div className="album py-2">
+                    <div className="container">
+                        <div className="row">
+                            {this.renderArticles()}
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

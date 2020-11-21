@@ -27,8 +27,8 @@ class App extends Component {
               <Navbar />
               <main role="main">
                 <Jumbotron header={"Welcome To The Universe"} body={"As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA."} href="/about"/>
-                <Loading requesting={this.props.requesting} />
-                <ArticlesContainer articles={this.props.articles} />
+                {/* <Loading requesting={this.props.requesting} /> */}
+                <ArticlesContainer articles={this.props.articles} requesting={this.props.requesting}/>
               </main>
             </Fragment>
           )
@@ -37,7 +37,7 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              <SearchCategoryContainer search={this.props.search} />
+              <SearchCategoryContainer search={this.props.search} requesting={this.props.requesting}/>
             </Fragment>
           )
         }} />
@@ -46,7 +46,7 @@ class App extends Component {
             <Fragment>
               <Navbar />
               <Loading requesting={this.props.requesting} />
-              <ActiveArticle {...routerProps} activeArticle={this.props.activeArticle}/>
+              <ActiveArticle {...routerProps} activeArticle={this.props.activeArticle} requesting={this.props.requesting}/>
             </Fragment>
           )
         }} />
@@ -54,8 +54,8 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              <Loading requesting={this.props.requesting} />
-              <MissionContainer {...routerProps} articles={this.props.articles}/>
+              {/* <Loading requesting={this.props.requesting} /> */}
+              <MissionContainer {...routerProps} articles={this.props.articles} requesting={this.props.requesting}/>
             </Fragment>
           )
         }} />
@@ -76,7 +76,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     articles: state.articles.articles, 
-    requesting: state.articles.requesting, 
+    requesting: state.requesting, 
     activeArticle: state.articles.activeArticle,
     error: state.error,
     search: state.search
