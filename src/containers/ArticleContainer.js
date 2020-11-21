@@ -11,13 +11,17 @@ class ArticleContainer extends Component {
 
     renderArticles = () => {
         if (this.props.articles && this.props.articles.length > 0) {
-            return this.props.articles.map((article) => <ArticleCard article={article} />)
+            return this.props.articles.map((article) => {
+                return  <div className="col-md-4">
+                            <ArticleCard article={article} />
+                        </div>
+            })
         }
     }
 
     render() {
         return(
-            <div className="album py-5">
+            <div className="album py-2">
                 <div className="container">
                     <div className="row">
                         {this.renderArticles()}

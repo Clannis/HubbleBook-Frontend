@@ -16,13 +16,16 @@ class MissionContainer extends Component {
     }
 
     renderArticles = () => {
-        if (this.props.articles[0].mission === this.props.match.params.mission_name) {
-            return this.props.articles.map((article) => <ArticleCard article={article} />)
+        if (this.props.articles[0].mission && this.props.articles[0].mission === this.props.match.params.mission_name) {
+            return this.props.articles.map((article) => {
+                return  <div className="col-md-4">
+                            <ArticleCard article={article} />
+                        </div>
+            })
         }
     }
 
     render() {
-        console.log(this.props.articles)
         return(
             <div className="album py-5">
                 <div className="container">
@@ -37,7 +40,7 @@ class MissionContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        articles: state.articles
+        articles: state.articles.articles
     }
 }
 

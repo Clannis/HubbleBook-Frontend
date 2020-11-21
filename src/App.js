@@ -10,6 +10,7 @@ import Loading from './components/Loading'
 import Footer from './components/Footer'
 import MissionContainer from './containers/MissionContainer'
 import About from './components/About'
+import SearchCategoryContainer from './containers/SearchCategoryContainer'
 
 
 class App extends Component {
@@ -36,7 +37,7 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              <p>search</p>
+              <SearchCategoryContainer articles={this.props.articles} />
             </Fragment>
           )
         }} />
