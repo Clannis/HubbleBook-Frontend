@@ -63,7 +63,8 @@ class ActiveArticle extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        activeArticle: state.activeArticle
+        activeArticle: state.activeArticle,
+        error: state.error
     }
 }
 

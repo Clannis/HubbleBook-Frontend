@@ -1,10 +1,9 @@
-export default function userReducer(state = {user: [], error: {}}, action) {
+export default function userReducer(state = {user: []}, action) {
     switch (action.type) {
-        case "ADD_ERROR":
+        case "ADD_USER":
             return {
                 ...state,
-                user: "",
-                error: action.message
+                user: action.user,
             }
         default:
             return state

@@ -1,6 +1,6 @@
 export default function fetchSearchArticles(search) {
     return (dispatch) => {
-      dispatch({ type: 'START_SEARCH_ARTICLES_REQUEST' })
+      dispatch({ type: 'START_SEARCH' })
       fetch('http://localhost:3000/search', {
         method: 'POST', // or 'PUT'
         headers: {
@@ -9,12 +9,11 @@ export default function fetchSearchArticles(search) {
         body: JSON.stringify({search: search}),
       })
       .then(response => response.json())
-      .then(articles => {
-        if (articles.message) {
-          console.log(articles)
-          dispatch({ type: 'ADD_ERROR', articles })
+      .then(results => {
+        if (results.message) {
+          dispatch({ type: 'ADD_ERROR', results })
         } else {
-          dispatch({ type: 'SEARCH_ARTICLES', articles })
+          dispatch({ type: 'ADD_RESULTS', results })
         }
       })
     };

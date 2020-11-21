@@ -40,7 +40,8 @@ class MissionContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        articles: state.articles.articles
+        articles: state.articles.articles,
+        error: state.error
     }
 }
 
