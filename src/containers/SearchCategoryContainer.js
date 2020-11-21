@@ -5,14 +5,18 @@ import Loading from '../components/Loading'
 class SearchCategoryContainer extends Component {
 
     renderArticlesByTitle = () => {
-        if (this.props.search.title) {
+        if (this.props.search.title.length > 0) {
             return this.props.search.title.map((article) => <ArticleCard article={article} />)
+        } else {
+            return <iframe src="https://giphy.com/embed/9SJazLPHLS8roFZMwZ" width="480" height="256" frameBorder="0"/>
         }
     }
 
     renderArticlesByContent = () => {
-        if (this.props.search.content) {
+        if (this.props.search.content.length > 0) {
             return this.props.search.content.map((article) => <ArticleCard article={article} />)
+        } else {
+            return <iframe src="https://giphy.com/embed/9SJazLPHLS8roFZMwZ" width="480" height="256" frameBorder="0"/>
         }
     }
 
