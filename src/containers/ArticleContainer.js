@@ -22,7 +22,15 @@ class ArticleContainer extends Component {
 
     render() {
         if (this.props.requesting) {
-            return <Loading/>
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col-4 mx-auto">
+                            <Loading/>
+                        </div>
+                    </div>
+                </div>
+            )
         } else {
             return(
                 <div className="album py-2">

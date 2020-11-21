@@ -15,7 +15,15 @@ class ActiveArticle extends Component {
         let article = this.props.activeArticle
 
         if (this.props.requesting) {
-            return <Loading/>
+            return (
+                <div className="container">
+                    <div className="row">
+                        <div className="col-4 mx-auto">
+                            <Loading/>
+                        </div>
+                    </div>
+                </div>
+            )
         } else {
             return(
                 <>
