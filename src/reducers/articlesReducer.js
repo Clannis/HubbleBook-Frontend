@@ -31,7 +31,7 @@ export default function articlesReducer(state = {articles: [], requesting: false
 
         case 'START_SEARCH_ARTICLES_REQUEST':
             return {...state,
-                articles: state.articles,
+                articles: {},
                 requesting: true,
                 activeArticle: {},
                 error: {}

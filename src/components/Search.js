@@ -1,5 +1,6 @@
 import { Component } from "react"
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'; // <--- import `withRouter`. We will use this in the bottom of our file.
 import fetchSearchArticles from '../actions/fetchSearchArticles'
 
 class Search extends Component {
@@ -14,6 +15,7 @@ class Search extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.history.push(`/search`)
         this.props.fetchSearchArticles(event.target.search.value)
     }
 
@@ -31,4 +33,4 @@ function mapDispatchToProps(dispatch){
     return { fetchSearchArticles: (search) => dispatch(fetchSearchArticles(search)) }
 }
 
-export default connect(null, mapDispatchToProps)(Search)
+export default withRouter(connect(null, mapDispatchToProps)(Search))

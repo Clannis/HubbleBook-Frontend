@@ -1,7 +1,7 @@
 export default function fetchSearchArticles(search) {
     return (dispatch) => {
       dispatch({ type: 'START_SEARCH_ARTICLES_REQUEST' })
-      fetch('http://localhost:3000/articles/search', {
+      fetch('http://localhost:3000/search', {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

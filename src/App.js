@@ -32,6 +32,14 @@ class App extends Component {
             </Fragment>
           )
         }}/> 
+        <Route exact path={'/search'} render={() => {
+          return(
+            <Fragment>
+              <Navbar />
+              <p>search</p>
+            </Fragment>
+          )
+        }} />
         <Route path={'/articles/:article_id'} render={(routerProps) => {
           return(
             <Fragment>
