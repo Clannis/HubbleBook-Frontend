@@ -17,7 +17,7 @@ class SearchCategoryContainer extends Component {
 
     render() {
         return(
-            <div className="container-fluid h-100 d-flex flex-column">
+            <div className="container-fluid h-75 d-flex flex-column">
                 <div className="row flex-fill flex-grow-1 p-2 px-5">
                     <div className="col-4 mh-100">
                         <h3 className="text-center">Results by<br/>Title</h3>
