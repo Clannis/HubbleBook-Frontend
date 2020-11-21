@@ -10,13 +10,13 @@ class MissionContainer extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.articles[0].mission !== this.props.match.params.mission_name) {
+        if (this.props.articles[0].mission && this.props.articles[0].mission !== this.props.match.params.mission_name) {
             this.props.fetchMissionArticles(this.props.match.params.mission_name)
         }
     }
 
     renderArticles = () => {
-        if (this.props.articles[0].mission && this.props.articles[0].mission === this.props.match.params.mission_name) {
+        if (this.props.articles[0] && this.props.articles[0].mission === this.props.match.params.mission_name) {
             return this.props.articles.map((article) => {
                 return  <div className="col-md-4">
                             <ArticleCard article={article} />
