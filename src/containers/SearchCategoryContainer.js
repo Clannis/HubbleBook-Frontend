@@ -4,14 +4,14 @@ import ArticleCard from '../components/ArticleCard'
 class SearchCategoryContainer extends Component {
 
     renderArticlesByTitle = () => {
-        if (this.props.articles.title) {
-            return this.props.articles.title.map((article) => <ArticleCard article={article} />)
+        if (this.props.search.title) {
+            return this.props.search.title.map((article) => <ArticleCard article={article} />)
         }
     }
 
     renderArticlesByContent = () => {
-        if (this.props.articles.content) {
-            return this.props.articles.content.map((article) => <ArticleCard article={article} />)
+        if (this.props.search.content) {
+            return this.props.search.content.map((article) => <ArticleCard article={article} />)
         }
     }
 
@@ -20,10 +20,10 @@ class SearchCategoryContainer extends Component {
             <div className="container-fluid h-75 d-flex flex-column">
                 <div className="row flex-fill flex-grow-1 p-2 px-5">
                     <div className="col-4 mh-100">
-                        <h3 className="text-center">Results by<br/>Title: {this.props.articles.title ? this.props.articles.title.length : 0}</h3>
+                        <h3 className="text-center">Results by<br/>Title: {this.props.search.title ? this.props.search.title.length : 0}</h3>
                     </div>
                     <div className="col-4 mh-100">
-                        <h3 className="text-center">Results by<br/>Content: {this.props.articles.content ? this.props.articles.content.length : 0}</h3>
+                        <h3 className="text-center">Results by<br/>Content: {this.props.search.content ? this.props.search.content.length : 0}</h3>
                     </div>
                     <div className="col-4 mh-100">
                         <h3 className="text-center">Results by<br/>Users</h3>

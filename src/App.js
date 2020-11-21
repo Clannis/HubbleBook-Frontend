@@ -37,7 +37,7 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              <SearchCategoryContainer articles={this.props.articles} />
+              <SearchCategoryContainer search={this.props.search} />
             </Fragment>
           )
         }} />
@@ -78,7 +78,8 @@ const mapStateToProps = (state) => {
     articles: state.articles.articles, 
     requesting: state.articles.requesting, 
     activeArticle: state.articles.activeArticle,
-    error: state.error
+    error: state.error,
+    search: state.search
   }
 }
 
