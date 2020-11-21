@@ -10,6 +10,8 @@ import Footer from './components/Footer'
 import MissionContainer from './containers/MissionContainer'
 import About from './components/About'
 import SearchCategoryContainer from './containers/SearchCategoryContainer'
+import Welcome from './components/Welcome'
+import Signup from './components/Signup'
 
 
 class App extends Component {
@@ -19,7 +21,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <Route exact path="/" render={() => <Login/> } />
+        <Route exact path="/" render={() => <Welcome/> } />
+        <Route path="/Login" render={() => <Login/> } />
+        <Route path="/Signup" render={() => <Signup/> } />
         <Route exact path="/articles" render={() => {
           return(
             <>
