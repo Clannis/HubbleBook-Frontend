@@ -42,7 +42,8 @@ class Signup extends Component {
                         <input type="email" id="inputEmail" name="email" className="form-control" placeholder="Email address" required="" autoFocus="" onChange={this.handleChange}/>
                         <input type="password" id="inputPassword" name="password" className="form-control" placeholder="Password" required="" onChange={this.handleChange}/>
                         <input type="password" id="inputPasswordConfirmation" name="passwordConfirmation" className="form-control" placeholder="Confirm Password" required="" onChange={this.handleChange}/>
-                        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <br/>
+                        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
                     </form>
                 </div>
                 {/* <div class="row h-100 justify-content-center align-items-center text-center">
