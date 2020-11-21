@@ -20,10 +20,10 @@ class SearchCategoryContainer extends Component {
             <div className="container-fluid h-75 d-flex flex-column">
                 <div className="row flex-fill flex-grow-1 p-2 px-5">
                     <div className="col-4 mh-100">
-                        <h3 className="text-center">Results by<br/>Title</h3>
+                        <h3 className="text-center">Results by<br/>Title: {this.props.articles.title.length}</h3>
                     </div>
                     <div className="col-4 mh-100">
-                        <h3 className="text-center">Results by<br/>Content</h3>
+                        <h3 className="text-center">Results by<br/>Content: {this.props.articles.content.length}</h3>
                     </div>
                     <div className="col-4 mh-100">
                         <h3 className="text-center">Results by<br/>Users</h3>
