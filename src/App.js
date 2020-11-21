@@ -65,7 +65,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {articles: state.articles, requesting: state.requesting, activeArticle: state.activeArticle}
+  return {articles: state.articles.articles, requesting: state.articles.requesting, activeArticle: state.articles.activeArticle}
 }
 
 export default connect(mapStateToProps)(App);
