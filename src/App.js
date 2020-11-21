@@ -6,7 +6,6 @@ import Jumbotron from './components/Jumbotron'
 import { Route } from 'react-router-dom'
 import ActiveArticle from './components/ActiveArticle'
 import Login from './components/Login'
-import Loading from './components/Loading'
 import Footer from './components/Footer'
 import MissionContainer from './containers/MissionContainer'
 import About from './components/About'
@@ -27,7 +26,6 @@ class App extends Component {
               <Navbar />
               <main role="main">
                 <Jumbotron header={"Welcome To The Universe"} body={"As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA."} href="/about"/>
-                {/* <Loading requesting={this.props.requesting} /> */}
                 <ArticlesContainer articles={this.props.articles} requesting={this.props.requesting}/>
               </main>
             </Fragment>
@@ -45,7 +43,6 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              <Loading requesting={this.props.requesting} />
               <ActiveArticle {...routerProps} activeArticle={this.props.activeArticle} requesting={this.props.requesting}/>
             </Fragment>
           )
@@ -54,7 +51,6 @@ class App extends Component {
           return(
             <Fragment>
               <Navbar />
-              {/* <Loading requesting={this.props.requesting} /> */}
               <MissionContainer {...routerProps} articles={this.props.articles} requesting={this.props.requesting}/>
             </Fragment>
           )
