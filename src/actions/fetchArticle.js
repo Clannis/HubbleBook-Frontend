@@ -1,5 +1,4 @@
 export default function fetchArticle(article_id) {
-    console.log("inside fetch: " + article_id)
     return (dispatch) => {
       dispatch({ type: 'START_GETTING_ARTICLE_REQUEST' });
       fetch(`http://localhost:3000/articles/${article_id}`)
