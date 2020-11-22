@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../containers/Navbar'
 
 class Welcome extends Component {
@@ -7,11 +8,14 @@ class Welcome extends Component {
             <>
                 <Navbar page={"welcome"} loggedIn={false} />
 
-                <div class="position-relative overflow-hidden text-center bg-dark">
+                <div class="position-relative overflow-hidden text-center bg-dark text-white">
                     <div class="col-md-5 p-lg-5 mx-auto my-5">
                         <h1 class="display-4 font-weight-normal">Welcome to the Universe</h1>
-                        <p class="lead font-weight-normal">AAs it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA.</p>
-                        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+                        <p class="lead font-weight-normal">
+                            {/* As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA. */}
+                            Stay informed about the most beloved telescope in all of human history. Talk about new discoveries, projects, and any needed repairs. Meet new people and make new friends that share your super awesome scientific and discovery interests.
+                        </p>
+                        <Link to={"/about"} ><div class="btn btn-outline-secondary">Learn More</div></Link>
                     </div>
                     <div class="product-device box-shadow d-none d-md-block"></div>
                     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
