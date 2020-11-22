@@ -36,9 +36,10 @@ class ActiveArticle extends Component {
                     <div className="container-fluid">
                         
                         <div class="row text-center bg-light">
-                            <div class="col">
+                            <div class="col my-5">
                                 <h1 class="display-6 font-weight-normal">{article.name}</h1>
                                 <p class="lead font-weight-normal">{article.abstract}</p>
+                                <a className="btn btn-primary" href={article.url} target="_blank" rel="noreferrer">Read Full Article</a>
                             </div>
                         </div>
 
