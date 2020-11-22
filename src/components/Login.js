@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import LoginSignupNav from './LoginSignupNav'
+import Navbar from '../containers/Navbar'
 
 class Login extends Component {
     state = {
@@ -30,7 +30,7 @@ class Login extends Component {
     render() {
         return(
             <div class="container h-100">
-                <LoginSignupNav login={true} />
+                <Navbar page={"login"} loggedIn={false} />
                 <div class="row h-100 justify-content-center align-self-center text-center">
                     <form className="col-6 my-auto" onSubmit={this.handleSubmit}>
                         <img className="mb-4 rounded" src="https://cdn.dribbble.com/users/1199444/screenshots/6546398/hubble_space_telescope.png" alt="" width="100" height="100"/>

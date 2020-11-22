@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import ArticlesContainer from './containers/ArticleContainer'
-import Navbar from './components/Navbar'
+import Navbar from './containers/Navbar'
 import { Route } from 'react-router-dom'
 import ActiveArticle from './components/ActiveArticle'
 import Login from './components/Login'
@@ -26,7 +26,7 @@ class App extends Component {
         <Route exact path="/articles" render={() => {
           return(
             <>
-              <Navbar />
+              <Navbar loggedIn={true}/>
               <main role="main">
                 <ArticlesContainer articles={this.props.articles} requesting={this.props.requesting}/>
               </main>
@@ -36,7 +36,7 @@ class App extends Component {
         <Route exact path={'/search'} render={() => {
           return(
             <>
-              <Navbar />
+              <Navbar loggedIn={true}/>
               <SearchCategoryContainer search={this.props.search} requesting={this.props.requesting}/>
             </>
           )
@@ -44,7 +44,7 @@ class App extends Component {
         <Route path={'/articles/:article_id'} render={(routerProps) => {
           return(
             <>
-              <Navbar />
+              <Navbar loggedIn={true}/>
               <ActiveArticle {...routerProps} activeArticle={this.props.activeArticle} requesting={this.props.requesting}/>
             </>
           )
@@ -52,7 +52,7 @@ class App extends Component {
         <Route path={'/missions/:mission_name'} render={(routerProps) => {
           return(
             <>
-              <Navbar />
+              <Navbar loggedIn={true}/>
               <MissionContainer {...routerProps} articles={this.props.articles} requesting={this.props.requesting}/>
             </>
           )
@@ -60,7 +60,7 @@ class App extends Component {
         <Route path={'/about'} render={() => {
           return(
             <>
-              <Navbar />
+              <Navbar loggedIn={true}/>
               <About />
             </>
           )

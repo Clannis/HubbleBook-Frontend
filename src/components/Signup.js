@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import LoginSignupNav from './LoginSignupNav'
+import Navbar from '../containers/Navbar'
 
 class Signup extends Component {
     state = {
@@ -34,8 +34,9 @@ class Signup extends Component {
 
     render() {
         return(
+            <>
+            <Navbar page={"signup"} loggedIn={false}/>
             <div class="container h-100">
-                <LoginSignupNav login={false} />
                 <div class="row h-100 justify-content-center align-self-center text-center">
                     <form className="col-6 my-auto" onSubmit={this.handleSubmit}>
                         <img className="mb-4 rounded" src="https://cdn.dribbble.com/users/1199444/screenshots/6546398/hubble_space_telescope.png" alt="" width="100" height="100"/>
@@ -74,6 +75,7 @@ class Signup extends Component {
                     <p>Or Signup With ...</p>
                 </div> */}
             </div>
+            </>
         )
     }
 }
