@@ -31,7 +31,7 @@ class Login extends Component {
             <div class="container h-100">
                 <div class="row h-100 justify-content-center align-self-center text-center">
                     <form className="col-6 my-auto" onSubmit={this.handleSubmit}>
-                        <img className="mb-4 rounded" src="https://cdn.dribbble.com/users/1199444/screenshots/6546398/hubble_space_telescope.png" alt="" width="100" height="72"/>
+                        <img className="mb-4 rounded" src="https://cdn.dribbble.com/users/1199444/screenshots/6546398/hubble_space_telescope.png" alt="" width="100" height="100"/>
                         <h1 className="h3 mb-3 font-weight-normal">Log In</h1>
                         <input type="email" id="inputEmail" name="email" className="form-control my-2" placeholder="Email Address" required="" autoFocus="" onChange={this.handleChange}/>
                         <div class="input-group" id="show_hide_password">
