@@ -9,7 +9,7 @@ class Welcome extends Component {
                 <Navbar page={"welcome"} loggedIn={false} />
 
                 <div class="position-relative overflow-hidden text-center bg-dark text-white">
-                    <div class="col-md-5 p-lg-5 mx-auto my-5">
+                    <div class="col-sm-8 col-md-6 col-lg-6 mx-auto my-5">
                         <h1 class="display-4 font-weight-normal">Welcome to the Universe</h1>
                         <p class="lead font-weight-normal">
                             {/* As it stands now, this application has been generated for the purposes of having a home base for all Hubble Telescope related articles published by NASA. */}
