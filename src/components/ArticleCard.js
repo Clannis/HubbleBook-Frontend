@@ -13,9 +13,9 @@ class ArticleCard extends Component {
 
     renderCard = () => {
         return(
-            <div className="card mb-4 shadow-sm" style={{width: "18rem"}} key={this.props.article.news_id}>
+            <div className="card mb-4 shadow-sm mx-auto" style={{width: "18rem"}} key={this.props.article.news_id}>
                 <Link key={this.props.article.news_id} to={`/articles/${this.props.article.news_id}`}>
-                    <img src={this.props.article.thumbnail} onClick={this.handleClick} className="card-img-top" alt="..."/>
+                    <img src={this.props.article.thumbnail} onClick={this.handleClick} className="card-img-top img-fluid" alt="..."/>
                 </Link>
                 <div className="card-body">
                     <h5 className="card-title">{this.props.article.name}</h5>

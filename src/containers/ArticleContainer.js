@@ -13,7 +13,7 @@ class ArticleContainer extends Component {
     renderArticles = () => {
         if (this.props.articles && this.props.articles.length > 0) {
             return this.props.articles.map((article) => {
-                return  <div className="col-md-4" key={article.news_id}>
+                return  <div className="col-xl-3 col-lg-4 col-md-6" key={article.news_id}>
                             <ArticleCard article={article}/>
                         </div>
             })
@@ -27,8 +27,8 @@ class ArticleContainer extends Component {
             )
         } else {
             return(
-                <div className="album py-2">
-                    <div className="container">
+                <div className="album py-5">
+                    <div className="container-fluid mx-auto overflow-auto">
                         <div className="row">
                             {this.renderArticles()}
                         </div>

@@ -10,8 +10,8 @@ const Navbar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <Link to={'/articles'}><div className=" btn nav-link">Home</div></Link>
+                    <li className="nav-item">
+                        <Link to={'/articles'}><div className=" btn nav-link active">Home</div></Link>
                     </li>
                     <li className="nav-item dropdown">
                         <div className="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Missions</div>
@@ -20,7 +20,7 @@ const Navbar = () => {
                             <Link to={'/missions/james_webb'}><div className="dropdown-item">James Webb</div></Link>
                         </div>
                     </li>
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <Link to={'/about'}><div className=" btn nav-link">About</div></Link>
                     </li>
                     <li>

@@ -3,8 +3,8 @@ import Loading from '../components/Loading'
 const LoadingContainer = () => {
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-4 mx-auto">
+            <div className="row align-self-center">
+                <div className="col-12 text-center">
                     <Loading/>
                 </div>
             </div>
