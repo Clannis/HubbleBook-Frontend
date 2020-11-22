@@ -8,8 +8,10 @@ const Navbar = (props) => {
     switch (props.loggedIn) {
         case true:
             return(
-                <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                    <Link to={'/articles'}><div className=" btn navbar-brand">HubbleBook</div></Link>
+                <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+                    <Link to={'/articles'}>
+                        <div className=" btn navbar-brand"><img src="https://static.thenounproject.com/png/331709-200.png" alt="icon" height="30px" width="30px" />HubbleBook</div>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -18,7 +20,7 @@ const Navbar = (props) => {
                             <li className="nav-item">
                                 <Link to={'/articles'}><div className=" btn nav-link active">Home</div></Link>
                             </li>
-                            <li className="nav-item dropdown">
+                            <li className="nav-item mx-auto dropdown">
                                 <div className="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Missions</div>
                                 <div className="dropdown-menu" aria-labelledby="dropdown03">
                                     <Link to={'/missions/hubble'}><div className="dropdown-item">Hubble</div></Link>

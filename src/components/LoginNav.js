@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const LoginNav = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
-            <Link to={'/articles'}><div className=" btn navbar-brand">HubbleBook</div></Link>
+            <Link to={'/articles'}><div className=" btn navbar-brand"><img src="https://static.thenounproject.com/png/331709-200.png" alt="icon" height="30px" width="30px" />HubbleBook</div></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
