@@ -29,7 +29,7 @@ const Navbar = (props) => {
                                 <Link to={'/about'}><div className=" btn nav-link">About</div></Link>
                             </li>
                             <li>
-                                <div className=" btn nav-link">Logout</div>
+                            <Link to={'/'}> <div className=" btn nav-link">Logout</div></Link>
                             </li>
                         </ul>
                         <Search/>
