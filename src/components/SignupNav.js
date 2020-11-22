@@ -10,10 +10,10 @@ const SignupNav = () => {
             <div className="collapse navbar-collapse" id="navbarCollapse">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <Link to={"/"} ><div class="btn nav-link">Welcome</div></Link>
+                        <Link to={"/"} ><div className="btn nav-link">Welcome</div></Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={"/Login"} ><div class="btn nav-link">Log In</div></Link>
+                        <Link to={"/Login"} ><div className="btn nav-link">Log In</div></Link>
                     </li>
                 </ul>
             </div>
