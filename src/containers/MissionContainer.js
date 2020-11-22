@@ -19,7 +19,7 @@ class MissionContainer extends Component {
     renderArticles = () => {
         if (this.props.articles[0] && this.props.articles[0].mission === this.props.match.params.mission_name) {
             return this.props.articles.map((article) => {
-                return  <div className="col-md-4">
+                return  <div className="col-md-4" key={article.news_id}>
                             <ArticleCard article={article} />
                         </div>
             })
