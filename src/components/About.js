@@ -11,8 +11,10 @@ const About = () => {
                     <ul className="list-unstyled rounded shadow-lg py-4">
                         <li>Flatiron School (obviously)</li>
                         <li>Bachelor of Science - Texas State University - San Marcos
-                            <li>Major - Anthropology</li>
-                            <li>Minor - Geography (focus on GIS)</li>
+                            <ul className="list-unstyled">
+                                <li><strong>Major:</strong> Anthropology</li>
+                                <li><strong>Minor:</strong> Geography (focus on GIS)</li>
+                            </ul>
                         </li>
                     </ul>
                     <p><strong>Previous Experience includes:</strong></p>
@@ -23,7 +25,7 @@ const About = () => {
                         <li>Distribution/Collection Operator</li>
                         <li>Heavy Equipment Operator</li>
                     </ul>
-                    <p><a class="btn btn-secondary" href="https://github.com/Clannis" role="button">View GitHub Profile »</a></p>
+                    <p><a className="btn btn-secondary" href="https://github.com/Clannis" role="button">View GitHub Profile »</a></p>
                 </div>
             </div>
             <div className="row my-3 pg-3 rouded shadow-lg bg-light">
