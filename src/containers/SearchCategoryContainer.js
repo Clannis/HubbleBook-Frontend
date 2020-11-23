@@ -68,7 +68,7 @@ class SearchCategoryContainer extends Component {
                             <h3 className="text-center">Results by<br/>Users</h3>
                         </div>
                     </div>
-                    <div className="row flex-fill flex-grow-1 px-5 pb-10" style={{minHeight: 0}}>
+                    <div className="row flex-fill flex-grow-1 px-5 pb-10" style={{minHeight: 0, maxHeight: "70vh"}}>
                         <div className="col mh-100 py-4 shadow-lg m-4 overflow-auto" style={{overflowY: "scroll"}}>
                             <div className="row justify-content-center">
                                 {this.renderArticlesByTitle()}
