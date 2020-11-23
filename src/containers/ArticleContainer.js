@@ -27,8 +27,8 @@ class ArticleContainer extends Component {
             )
         } else {
             return(
-                <div className="album py-5">
-                    <div className="container-fluid mx-auto overflow-auto">
+                <div className="album py-5" style={{maxHeight: "88vh", overflowY: "scroll"}}>
+                    <div className="container-fluid mx-auto">
                         <div className="row">
                             {this.renderArticles()}
                         </div>

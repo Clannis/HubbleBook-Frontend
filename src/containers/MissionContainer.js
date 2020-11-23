@@ -33,7 +33,7 @@ class MissionContainer extends Component {
             )
         } else {
             return(
-                <div className="album py-5">
+                <div className="album py-5" style={{maxHeight: "88vh", overflowY: "scroll"}}>
                     <div className="container">
                         <div className="row">
                             {this.renderArticles()}
