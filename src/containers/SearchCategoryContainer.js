@@ -6,7 +6,7 @@ class SearchCategoryContainer extends Component {
 
     renderArticlesByTitle = () => {
         if (this.props.search.title.length > 0) {
-            return this.props.search.title.map((article) => <ArticleCard article={article} />)
+            return this.props.search.title.map((article) => <ArticleCard article={article} key={article.news_id}/>)
         } else {
             return <iframe src="https://giphy.com/embed/9SJazLPHLS8roFZMwZ" width="480" height="256" frameBorder="0"/>
         }
@@ -14,7 +14,7 @@ class SearchCategoryContainer extends Component {
 
     renderArticlesByContent = () => {
         if (this.props.search.content.length > 0) {
-            return this.props.search.content.map((article) => <ArticleCard article={article} />)
+            return this.props.search.content.map((article) => <ArticleCard article={article} key={article.news_id}/>)
         } else {
             return <iframe src="https://giphy.com/embed/9SJazLPHLS8roFZMwZ" width="480" height="256" frameBorder="0"/>
         }
@@ -69,17 +69,17 @@ class SearchCategoryContainer extends Component {
                         </div>
                     </div>
                     <div className="row flex-fill flex-grow-1 px-5 pb-10" style={{minHeight: 0, maxHeight: "70vh"}}>
-                        <div className="col mh-100 py-4 shadow-lg m-4 overflow-auto" style={{overflowY: "scroll"}}>
+                        <div className="col mh-100 m-4 overflow-auto" style={{overflowY: "scroll"}}>
                             <div className="row justify-content-center">
                                 {this.renderArticlesByTitle()}
                             </div>
                         </div>
-                        <div className="col mh-100 py-4 shadow-lg m-4 overflow-auto" style={{overflowY: "scroll"}}>
+                        <div className="col mh-100 m-4 overflow-auto" style={{overflowY: "scroll"}}>
                             <div className="row justify-content-center">
                                 {this.renderArticlesByContent()}
                             </div>
                         </div>
-                        <div className="col mh-100 py-4 shadow-lg m-4 overflow-auto" style={{overflowY: "scroll"}}>
+                        <div className="col mh-100 m-4 overflow-auto" style={{overflowY: "scroll"}}>
                             <div className="row justify-content-center">
                                 {this.renderArticlesByContent()}
                             </div>
