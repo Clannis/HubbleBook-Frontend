@@ -3,7 +3,7 @@ export default function errorReducer(state = {message: "" }, action) {
         case "ADD_ERROR":
             return {
                 ...state,
-                message: action.message,
+                message: action.message
             }
         default:
             return state

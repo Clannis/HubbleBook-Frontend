@@ -1,18 +1,16 @@
-export default function searchReducer(state = {title: [], content: [], requesting: false}, action) {
+export default function searchReducer(state = {title: [], content: [] }, action) {
     switch (action.type) {
         case "START_SEARCH":
             return {
                 ...state,
                 title: [],
-                content: [],
-                requesting: true
+                content: []
             }
         case "ADD_RESULTS":
             return {
                 ...state,
                 title: action.results.title,
-                content: action.results.content,
-                requesting: false
+                content: action.results.content
             }
         default:
             return state
