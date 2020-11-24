@@ -5,6 +5,7 @@ import commentsReducer from "./commentsReducer";
 import requestingReducer from "./requestingReducer";
 import searchReducer from "./searchReducer";
 import userReducer from './userReducer'
+import modalReducer from './modalReducer'
  
 const rootReducer = combineReducers({
   articles: articlesReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   search: searchReducer,
   error: errorReducer,
   requesting: requestingReducer,
-  comments: commentsReducer
+  comments: commentsReducer,
+  modal: modalReducer
 });
  
 export default rootReducer;

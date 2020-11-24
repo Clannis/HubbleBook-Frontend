@@ -16,19 +16,13 @@ class CommentContainer extends Component {
     }
 
     renderComments = () => {
-        return this.props.comments.map(comment => <Comment comment={comment} key={comment.id} setModalContent={this.setModalContent}/>)
-    }
-
-    setModalContent = (content) => {
-        this.setState({
-            modalContent: content
-        })
+        return this.props.comments.map(comment => <Comment comment={comment} key={comment.id} />)
     }
 
     render() {
         return (
             <>
-                <EditModal content={this.state.modalContent}/>
+                 <EditModal />
                 <div className="row">
                     <div className="col my-3 p-3 bg-white">
                         <h6 className="border-bottom border-gray pb-2 mb-0">Comments</h6>
@@ -45,7 +39,8 @@ class CommentContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        comments: state.comments.comments
+        comments: state.comments.comments,
+        modal: state.modal.content
     }
 }
 

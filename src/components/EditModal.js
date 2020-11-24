@@ -1,47 +1,53 @@
-import { Component } from 'react'
+import { Component, createRef } from 'react'
+import { connect } from 'react-redux'
+import clearModalContent from '../actions/clearModalContent'
+import addModalContent from '../actions/addModalContent'
+
 
 class EditModal extends Component {
-    constructor(props) {
+    constructor() {
         super()
-        this.state = {
-            content: props.content
-        }
+        
+        this.formContent = createRef()  
     }
 
-    componentDidUpdate() {
-        if (this.state.content !== this.props.content) {
-            this.setState({content: this.props.content})
-        }   
+    componentDidMount() {
+         
     }
 
     handleChange = (event) => {
-        this.setState({
-            content: event.target.value
-        })
+        this.props.addModalContent(event.target.value)
+        
+    }
+
+    handleSubmit = () => {
+        console.log(this.formContent.current.value)
     }
 
     render() {
         return (
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Comment</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Edit Comment</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => this.props.clearModalContent()}>
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                         <form>
-                            <div className="input-group" id="show_hide_password">
-                                <input type="text" id="content" name="content" className="form-control" required="" value={this.state.content} onChange={this.handleChange}/>
+                            <div className="modal-body">
+                                
+                                    <div className="input-group" id="show_hide_password">
+                                        <input ref={this.formContent} type="text" id="content" name="content" className="form-control" required="" value={this.props.content} onChange={this.handleChange}/>
+                                    </div>
+                                
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={() => this.props.clearModalContent()}>Close</button>
+                                <button type="button" className="btn btn-primary" onClick={this.handleSubmit}>Save changes</button>
                             </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -49,4 +55,18 @@ class EditModal extends Component {
     }
 }
 
-export default EditModal
+const mapStateToProps = (state) => {
+    return {
+        content: state.modal.content,
+        error: state.error
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return { 
+        clearModalContent: () => dispatch(clearModalContent()),
+        addModalContent: (content) => dispatch(addModalContent(content))
+     }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditModal)

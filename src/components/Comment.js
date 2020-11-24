@@ -1,9 +1,11 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
+import addModalContent from '../actions/addModalContent'
 
 class Comment extends Component {
 
     passToModal = () => {
-        this.props.setModalContent(this.props.comment.content)
+        this.props.addModalContent(this.props.comment.content)
     }
 
     handleDelete = () => {
@@ -63,4 +65,8 @@ class Comment extends Component {
     }
 }
 
-export default Comment
+function mapDispatchToProps(dispatch){
+    return { addModalContent: (content) => dispatch(addModalContent(content)) }
+}
+
+export default connect(null, mapDispatchToProps)(Comment)
