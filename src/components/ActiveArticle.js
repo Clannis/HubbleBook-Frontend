@@ -1,12 +1,28 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import addNewComment from '../actions/addNewComment'
 import fetchArticle from '../actions/fetchArticle'
 import LoadingContainer from '../containers/LoadingContainer'
 
 class ActiveArticle extends Component {
+    constructor() {
+        super()
+        this.state = {
+            content: ""
+        }
+    }
 
     componentDidMount() {
         this.props.fetchArticle(this.props.match.params.article_id)
+    }
+
+    handleChange = (event) => {
+        this.setState({ content: event.target.value})
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addNewComment(event.target.content.value)
     }
 
     render() {
@@ -67,10 +83,10 @@ class ActiveArticle extends Component {
                                         Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
                                     </p>
                                 </div>
-                                <form>
+                                <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label>Add Comment</label>
-                                        <textarea className="form-control" id="content" rows="3"></textarea>
+                                        <textarea className="form-control" id="content" name="content" rows="3" onChange={this.handleChange} value={this.state.content}></textarea>
                                     </div>
                                     <button type="submit" className="btn btn-primary mb-2">Post</button>
                                 </form>
@@ -91,7 +107,10 @@ const mapStateToProps = (state) => {
 }
 
 function mapDispatchToProps(dispatch){
-    return { fetchArticle: (article_id) => dispatch(fetchArticle(article_id)) }
+    return { 
+        fetchArticle: (article_id) => dispatch(fetchArticle(article_id)),
+        addNewComment: (content) => dispatch(addNewComment(content))
+    }
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActiveArticle)

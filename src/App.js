@@ -92,7 +92,8 @@ const mapStateToProps = (state) => {
     activeArticle: state.articles.activeArticle,
     error: state.error,
     search: state.search,
-    id: state.user.user
+    id: state.user.user,
+    comments: state.comments.comments
   }
 }
 
