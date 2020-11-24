@@ -16,7 +16,7 @@ class EditModal extends Component {
     }
 
     handleChange = (event) => {
-        this.props.addModalContent(event.target.value)
+        this.props.addModalContent({ content: event.target.value, commentId: this.props.commentId })
         
     }
 
@@ -58,6 +58,7 @@ class EditModal extends Component {
 const mapStateToProps = (state) => {
     return {
         content: state.modal.content,
+        commentId: state.modal.commentId,
         error: state.error
     }
 }
