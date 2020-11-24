@@ -53,7 +53,6 @@ class Login extends Component {
     render() {
         return(
             <div className="container h-100">
-                <Navbar page={"login"} loggedIn={false} />
                 <div className="row h-100 justify-content-center align-self-center text-center">
                     <form className="col-6 my-auto" onSubmit={this.handleSubmit}>
                         <img className="mb-4 rounded" src="https://cdn.dribbble.com/users/1199444/screenshots/6546398/hubble_space_telescope.png" alt="" width="100" height="100"/>

@@ -6,7 +6,6 @@ class Welcome extends Component {
     render() {
         return (
             <>
-                <Navbar page={"welcome"} loggedIn={false} />
                 <section id="welcome">
                     <div className="position-relative overflow-hidden text-center bg-dark text-white" style={{backgroundImage: "url(https://scitechdaily.com/images/Carina-Nebula-2-scaled.jpg)"}}>
                         <div className="col-sm-8 col-md-6 col-lg-6 mx-auto my-5">

@@ -65,7 +65,6 @@ class Signup extends Component {
     render() {
         return(
             <>
-            <Navbar page={"signup"} loggedIn={false}/>
             <div className="container h-100">
                 <div className="row h-100 justify-content-center align-self-center text-center">
                     <form className="col-6 my-auto" onSubmit={this.handleSubmit}>

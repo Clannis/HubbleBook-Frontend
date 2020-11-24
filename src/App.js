@@ -16,47 +16,46 @@ import Signup from './components/Signup'
 class App extends Component {
 
   loggedIn = () => {
-    console.log(this.props.id ? true : false)
     return this.props.id ? true : false
   }
 
   render() {
     return (
       <>
-        <Route exact path="/" render={() => <Welcome/> } />
+        <Route exact path="/" render={(routerProps) => <><Navbar {...routerProps} loggedIn={this.loggedIn} /><Welcome/></> } />
 
-        <Route path="/Login" >
-          {this.loggedIn() ? <Redirect to="/articles" /> : <Login />}
-        </Route>
+        <Route path="/Login" render={(routerProps) => {
+          return this.loggedIn() ? <Redirect to="/articles" /> : <><Navbar {...routerProps} loggedIn={this.loggedIn} /><Login /></>
+        }} />
 
-        <Route path="/Signup" >
-          {this.loggedIn() ? <Redirect to="/articles" /> : <Signup />}
-        </Route>
+        <Route path="/Signup" render={(routerProps) => {
+          return this.loggedIn() ? <Redirect to="/articles" /> : <><Navbar {...routerProps} loggedIn={this.loggedIn} /><Signup /></>
+        }} />
 
-        <Route exact path="/articles">
-          {this.loggedIn() ? 
-            (<>
-              <Navbar loggedIn={true}/>
-              <ArticlesContainer articles={this.props.articles} requesting={this.props.requesting}/>
-            </> )
-          : 
-           <Redirect to="/" />}  
-        </Route> 
+        <Route exact path="/articles" render={ (routerProps) => {
+          return this.loggedIn() ? 
+          (<>
+            <Navbar {...routerProps} loggedIn={this.loggedIn}/>
+            <ArticlesContainer articles={this.props.articles} requesting={this.props.requesting}/>
+          </> )
+        : 
+         <Redirect to="/" />
+        }}/>
 
-        <Route exact path={'/search'}>
-          {this.loggedIn() ? 
-            <>
-              <Navbar loggedIn={true}/>
-              <SearchCategoryContainer search={this.props.search} requesting={this.props.requesting}/>
-            </>
-          : 
-           <Redirect to="/" />}
-        </Route>
+        <Route exact path={'/search'} render={ (routerProps) => {
+          return this.loggedIn() ? 
+          <>
+            <Navbar {...routerProps} loggedIn={this.loggedIn}/>
+            <SearchCategoryContainer search={this.props.search} requesting={this.props.requesting}/>
+          </>
+        : 
+         <Redirect to="/" />
+        }} />
 
         <Route path={'/articles/:article_id'} render={(routerProps) => {
           return this.loggedIn() ? 
             <>
-              <Navbar loggedIn={true}/>
+              <Navbar {...routerProps} loggedIn={this.loggedIn}/>
               <ActiveArticle {...routerProps} activeArticle={this.props.activeArticle} requesting={this.props.requesting}/>
             </>
             : 
@@ -66,16 +65,16 @@ class App extends Component {
         <Route path={'/missions/:mission_name'} render={(routerProps) => {
           return this.loggedIn() ? 
             <>
-              <Navbar loggedIn={true}/>
+              <Navbar {...routerProps} loggedIn={this.loggedIn}/>
               <MissionContainer {...routerProps} articles={this.props.articles} requesting={this.props.requesting}/>
             </>
             : 
             <Redirect to="/" />
         }} />
-        <Route path={'/about'} render={() => {
+        <Route path={'/about'} render={(routerProps) => {
           return(
             <>
-              <Navbar loggedIn={true}/>
+              <Navbar {...routerProps} loggedIn={this.loggedIn}/>
               <About />
             </>
           )
