@@ -22,7 +22,8 @@ class ActiveArticle extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addNewComment(event.target.content.value)
+        const data = {content: event.target.content.value, article_id: this.props.activeArticle.id}
+        this.props.addNewComment(data)
     }
 
     render() {
