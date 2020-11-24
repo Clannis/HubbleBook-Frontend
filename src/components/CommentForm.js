@@ -16,7 +16,7 @@ class CommentForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const data = {content: event.target.content.value, article_id: this.props.activeArticle.id}
+        const data = {content: event.target.content.value, article_id: this.props.activeArticle.news_id}
         this.props.addNewComment(data)
         this.setState({content: ""})
     }
