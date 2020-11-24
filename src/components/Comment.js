@@ -5,7 +5,7 @@ import addModalContent from '../actions/addModalContent'
 class Comment extends Component {
 
     passToModal = () => {
-        this.props.addModalContent(this.props.comment.content)
+        this.props.addModalContent({ content: this.props.comment.content, commentId: this.props.comment.id })
     }
 
     handleDelete = () => {

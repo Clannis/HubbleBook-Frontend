@@ -1,5 +1,5 @@
 export default function addModalContent(data) {
     return (dispatch) => {
-        dispatch({ type: 'ADD_CONTENT', content: data })
+        dispatch({ type: 'ADD_CONTENT', content: data.content, commentId: data.commentId })
     }
 }
