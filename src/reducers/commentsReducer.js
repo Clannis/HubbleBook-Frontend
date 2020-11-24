@@ -3,7 +3,7 @@ export default function commentsReducer(state = { comments: [] }, action) {
         case "ADD_COMMENT":
             console.log(action)
             return {
-                comments: [...state.comments, {content: action.comment, article: {id: action.article.id}, user: {username: action.user.username} } ],
+                comments: [...state.comments, {content: action.comment.content, id: action.comment.id, article: {id: action.article.id}, user: {username: action.user.username} } ],
             }
         case 'SET_COMMENTS':
             return {

@@ -4,26 +4,41 @@ import { connect } from 'react-redux'
 import fetchArticleComments from '../actions/fetchArticleComments'
 import addNewComment from '../actions/addNewComment'
 import Comment from '../components/Comment'
+import EditModal from '../components/EditModal'
 
 
 class CommentContainer extends Component {
+    constructor(){
+        super()
+        this.state = {
+            modalContent: ""
+        }
+    }
 
     renderComments = () => {
-        console.log(this.props.comments)
-        return this.props.comments.map(comment => <Comment comment={comment} />)
+        return this.props.comments.map(comment => <Comment comment={comment} key={comment.id} setModalContent={this.setModalContent}/>)
+    }
+
+    setModalContent = (content) => {
+        this.setState({
+            modalContent: content
+        })
     }
 
     render() {
         return (
-            <div className="row">
-                <div className="col my-3 p-3 bg-white">
-                    <h6 className="border-bottom border-gray pb-2 mb-0">Comments</h6>
-                    
-                    {this.renderComments()}
-                    
-                    <CommentForm />
+            <>
+                <EditModal content={this.state.modalContent}/>
+                <div className="row">
+                    <div className="col my-3 p-3 bg-white">
+                        <h6 className="border-bottom border-gray pb-2 mb-0">Comments</h6>
+                        
+                        {this.renderComments()}
+                        
+                        <CommentForm />
+                    </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
