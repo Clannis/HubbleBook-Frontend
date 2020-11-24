@@ -1,6 +1,15 @@
 import { Component } from 'react'
 
 class Comment extends Component {
+
+    handleEdit = () => {
+        
+    }
+
+    handleDelete = () => {
+
+    }
+
     render() {
         return (
             <>
@@ -16,8 +25,8 @@ class Comment extends Component {
                                     </svg>
                                 </strong>
                                 <div class="dropdown-menu">
-                                    <div class="dropdown-item">Edit</div>
-                                    <div class="dropdown-item text-danger">Delete</div>
+                                    <div class="dropdown-item" onClick={this.handleEdit}>Edit</div>
+                                    <div class="dropdown-item text-danger" onClick={this.handleDelete}>Delete</div>
                                 </div>
                             </div>
                         </div>
