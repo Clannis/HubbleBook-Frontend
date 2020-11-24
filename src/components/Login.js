@@ -1,4 +1,6 @@
 import { Component, createRef } from 'react'
+import { connect } from 'react-redux'
+import login from '../actions/login'
 import Navbar from '../containers/Navbar'
 
 class Login extends Component {
@@ -22,17 +24,10 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const { email, password, rememberMe } = this.state
-        const body = {password: password, email: email}
-        // fetch 
-        .then(response => {
-            if (!response.errors){
-              console.log(response)
-              // do something
-            } else {
-              alert(response.errors.message)
-            }
-          })
+        const email = this.state.email
+        const password = this.state.password
+        const user = {password: password, email: email}
+        this.props.login(user)
     }
 
     componentDidMount() {
@@ -95,4 +90,10 @@ class Login extends Component {
     }
 }
 
-export default Login
+const mapDispatchToProps = (dispatch) => {
+    return {
+        login: (user) => dispatch(login(user))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login)

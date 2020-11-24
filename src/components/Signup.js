@@ -1,4 +1,6 @@
 import { Component, createRef } from 'react'
+import { connect } from 'react-redux'
+import fetchNewUser from '../actions/fetchNewUser'
 import Navbar from '../containers/Navbar'
 
 class Signup extends Component {
@@ -24,20 +26,15 @@ class Signup extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const { username, email, password, passwordConfirmation } = this.state
+        const username = this.state.username
+        const email = this.state.email
+        const password = this.state.password
+        const passwordConfirmation = this.state.passwordConfirmation
         if (password === passwordConfirmation){
-          const body = {username: username, password: password, email: email}
-          // fetch
-          .then(response => {
-            if (!response.errors){
-                console.log(response)
-                // do something
-            } else {
-              alert(response.errors.message)
-            }
-          }) 
+          const newUser = {username: username, password: password, email: email}
+          this.props.fetchNewUser(newUser)
         } else {
-          alert("Passwords do not match!")
+            alert("passwords dont match")
         }
     }
 
@@ -121,4 +118,10 @@ class Signup extends Component {
     }
 }
 
-export default Signup
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchNewUser: (newUser) => dispatch(fetchNewUser(newUser))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Signup)

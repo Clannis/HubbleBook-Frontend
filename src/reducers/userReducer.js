@@ -1,9 +1,19 @@
-export default function userReducer(state = {user: []}, action) {
+export default function userReducer(state = {user: "" }, action) {
     switch (action.type) {
         case "ADD_USER":
+            localStorage.token = action.token
             return {
-                ...state,
                 user: action.user,
+            }
+        case "LOGIN":
+            localStorage.token = action.token
+            return {
+                user: action.user
+            }
+        case "LOGOUT":
+            localStorage.removeItem('token')
+            return {
+                user: ""
             }
         default:
             return state
