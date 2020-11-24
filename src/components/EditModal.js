@@ -2,6 +2,7 @@ import { Component, createRef } from 'react'
 import { connect } from 'react-redux'
 import clearModalContent from '../actions/clearModalContent'
 import addModalContent from '../actions/addModalContent'
+import updateCommentContent from '../actions/updateCommentContent'
 
 
 class EditModal extends Component {
@@ -21,7 +22,9 @@ class EditModal extends Component {
     }
 
     handleSubmit = () => {
-        console.log(this.formContent.current.value)
+        console.log(this.props.content)
+        let data = { content: this.props.content, commentId: this.props.commentId }
+        this.props.updateCommentContent(data)
     }
 
     render() {
@@ -66,7 +69,8 @@ const mapStateToProps = (state) => {
 function mapDispatchToProps(dispatch){
     return { 
         clearModalContent: () => dispatch(clearModalContent()),
-        addModalContent: (content) => dispatch(addModalContent(content))
+        addModalContent: (content) => dispatch(addModalContent(content)),
+        updateCommentContent: (content) => dispatch(updateCommentContent(content))
      }
 }
 
