@@ -1,29 +1,16 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import addNewComment from '../actions/addNewComment'
 import fetchArticle from '../actions/fetchArticle'
+import fetchArticleComments from '../actions/fetchArticleComments'
+import CommentContainer from '../containers/CommentContainer'
 import LoadingContainer from '../containers/LoadingContainer'
 
 class ActiveArticle extends Component {
-    constructor() {
-        super()
-        this.state = {
-            content: ""
-        }
-    }
+    
 
     componentDidMount() {
         this.props.fetchArticle(this.props.match.params.article_id)
-    }
-
-    handleChange = (event) => {
-        this.setState({ content: event.target.value})
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-        const data = {content: event.target.content.value, article_id: this.props.activeArticle.id}
-        this.props.addNewComment(data)
+        this.props.fetchArticleComments(this.props.match.params.article_id)
     }
 
     render() {
@@ -60,39 +47,8 @@ class ActiveArticle extends Component {
                             </div>
                         </div>
 
-                        <div className="row">
-                            <div className="col my-3 p-3 bg-white">
-                                <h6 className="border-bottom border-gray pb-2 mb-0">Comments</h6>
-                                <div className="media text-muted pt-3">
-                                    <svg className="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-                                    <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                                        <strong className="d-block text-gray-dark">@username</strong>
-                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                    </p>
-                                </div>
-                                <div className="media text-muted pt-3">
-                                    <svg className="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
-                                    <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                                        <strong className="d-block text-gray-dark">@username</strong>
-                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                    </p>
-                                </div>
-                                <div className="media text-muted pt-3">
-                                    <svg className="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
-                                    <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                                        <strong className="d-block text-gray-dark">@username</strong>
-                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                                    </p>
-                                </div>
-                                <form onSubmit={this.handleSubmit}>
-                                    <div className="form-group">
-                                        <label>Add Comment</label>
-                                        <textarea className="form-control" id="content" name="content" rows="3" onChange={this.handleChange} value={this.state.content}></textarea>
-                                    </div>
-                                    <button type="submit" className="btn btn-primary mb-2">Post</button>
-                                </form>
-                            </div>
-                        </div>
+                        <CommentContainer />
+
                     </div>
                 </>
             )
@@ -110,7 +66,7 @@ const mapStateToProps = (state) => {
 function mapDispatchToProps(dispatch){
     return { 
         fetchArticle: (article_id) => dispatch(fetchArticle(article_id)),
-        addNewComment: (content) => dispatch(addNewComment(content))
+        fetchArticleComments: (articleId) => dispatch(fetchArticleComments(articleId))
     }
   }
 
