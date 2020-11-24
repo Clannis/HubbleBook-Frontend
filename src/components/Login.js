@@ -1,7 +1,6 @@
 import { Component, createRef } from 'react'
 import { connect } from 'react-redux'
 import login from '../actions/login'
-import Navbar from '../containers/Navbar'
 
 class Login extends Component {
     constructor(){

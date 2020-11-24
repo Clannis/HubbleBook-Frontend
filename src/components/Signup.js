@@ -1,7 +1,6 @@
 import { Component, createRef } from 'react'
 import { connect } from 'react-redux'
 import fetchNewUser from '../actions/fetchNewUser'
-import Navbar from '../containers/Navbar'
 
 class Signup extends Component {
     constructor(){
