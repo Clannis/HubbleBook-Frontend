@@ -13,7 +13,6 @@ export default function fetchNewUser(newUser) {
             if (!response.errors){
                 console.log(response.user)
                 dispatch({ type: 'ADD_USER', user: response.user })
-                localStorage.token = response.token
                 dispatch({ type: 'STOP_REQUESTING'})
               } else {
                 alert(response.errors)

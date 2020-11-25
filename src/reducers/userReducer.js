@@ -1,7 +1,7 @@
 export default function userReducer(state = {user: "" }, action) {
     switch (action.type) {
         case "ADD_USER":
-            localStorage.token = action.token
+            sessionStorage.token = action.token
             return {
                 user: action.user,
             }
@@ -11,7 +11,7 @@ export default function userReducer(state = {user: "" }, action) {
                 user: action.user
             }
         case "LOGOUT":
-            localStorage.removeItem('token')
+            localStorage.token ? localStorage.removeItem('token') : sessionStorage.removeItem('token')
             return {
                 user: ""
             }
