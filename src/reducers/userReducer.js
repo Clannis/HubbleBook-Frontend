@@ -6,7 +6,7 @@ export default function userReducer(state = {user: "" }, action) {
                 user: action.user,
             }
         case "LOGIN":
-            localStorage.token = action.token
+            action.rememberMe ? localStorage.token = action.token : sessionStorage.token = action.token
             return {
                 user: action.user
             }

@@ -16,7 +16,10 @@ import Signup from './components/Signup'
 class App extends Component {
 
   loggedIn = () => {
-    return this.props.id ? true : false
+    if (localStorage.token || sessionStorage.token) {
+      return true
+    } 
+    return false
   }
 
   render() {

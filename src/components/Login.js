@@ -24,7 +24,8 @@ class Login extends Component {
         e.preventDefault()
         const email = this.state.email
         const password = this.state.password
-        const user = {password: password, email: email}
+        const rememberMe = this.state.rememberMe
+        const user = {password: password, email: email, rememberMe: rememberMe}
         this.props.login(user)
     }
 
