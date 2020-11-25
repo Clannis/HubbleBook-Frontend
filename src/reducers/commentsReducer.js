@@ -14,6 +14,10 @@ export default function commentsReducer(state = { comments: [] }, action) {
             return {
                 comments: [...state.comments.slice(0, idx), {content: action.content, id: action.commentId, article: {id: action.article.id}, user: {username: action.user.username}}, ...state.comments.slice(idx + 1)]
             }
+        case 'REMOVE_COMMENT':
+            return {
+                comments: state.comments.filter(comment => comment.id !== action.id)
+            }
         default:
             return state
     }

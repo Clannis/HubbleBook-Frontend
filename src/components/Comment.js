@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import addModalContent from '../actions/addModalContent'
+import deleteComment from '../actions/deleteComment'
 
 class Comment extends Component {
 
@@ -9,12 +10,10 @@ class Comment extends Component {
     }
 
     handleDelete = () => {
-
+        this.props.deleteComment(this.props.comment.id)
     }
 
     renderDropdown = () => {
-        console.log(this.props.user.username)
-        console.log(this.props.comment.user.username)
         if (this.props.comment.user.username === this.props.user.username ) {
             return (
                 <>
@@ -82,7 +81,10 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-    return { addModalContent: (content) => dispatch(addModalContent(content)) }
+    return { 
+        addModalContent: (content) => dispatch(addModalContent(content)),
+        deleteComment: (id) => dispatch(deleteComment(id))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Comment)
