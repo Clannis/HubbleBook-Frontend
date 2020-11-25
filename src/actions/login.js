@@ -9,7 +9,7 @@ export default function login(user) {
         })
         .then(response => response.json())
         .then(response => {
-            dispatch({ type: 'LOGIN', user: response.user.id, token: response.token })
+            dispatch({ type: 'LOGIN', user: response.user, token: response.token })
         })
     }
   }
