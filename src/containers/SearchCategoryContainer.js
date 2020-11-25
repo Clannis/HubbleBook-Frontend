@@ -20,6 +20,14 @@ class SearchCategoryContainer extends Component {
         }
     }
 
+    renderArticlesByComment = () => {
+        if (this.props.search.comment.length > 0) {
+            return this.props.search.comment.map((article) => <ArticleCard article={article} key={article.news_id}/>)
+        } else {
+            return <iframe src="https://giphy.com/embed/9SJazLPHLS8roFZMwZ" width="480" height="256" frameBorder="0"/>
+        }
+    }
+
     render() {
         if (this.props.requesting) {
             return(
@@ -65,7 +73,7 @@ class SearchCategoryContainer extends Component {
                             <h3 className="text-center">Results by<br/>Content: {this.props.search.content ? this.props.search.content.length : 0}</h3>
                         </div>
                         <div className="col-4 ">
-                            <h3 className="text-center">Results by<br/>Users</h3>
+                            <h3 className="text-center">Results by<br/>Comment: {this.props.search.comment ? this.props.search.comment.length : 0}</h3>
                         </div>
                     </div>
                     <div className="row flex-fill flex-grow-1 px-5 pb-10" style={{minHeight: 0, maxHeight: "70vh"}}>
@@ -81,7 +89,7 @@ class SearchCategoryContainer extends Component {
                         </div>
                         <div className="col mh-100 m-4 overflow-auto" style={{overflowY: "scroll"}}>
                             <div className="row justify-content-center">
-                                {this.renderArticlesByContent()}
+                                {this.renderArticlesByComment()}
                             </div>
                         </div>
                     </div>
