@@ -46,6 +46,12 @@ class Login extends Component {
         }
     }
 
+    rememberMe = () => {
+        this.setState({
+            rememberMe: !this.state.rememberMe
+        })
+    }
+
     render() {
         return(
             <div className="container h-100">
@@ -71,7 +77,7 @@ class Login extends Component {
                             </div>
                         </div>                        <div className="checkbox mb-3">
                             <label>
-                                <input type="checkbox" name="rememberMe" value="remember-me" onChange={this.handleChange}/> Remember me
+                                <input type="checkbox" name="rememberMe" value="remember-me" onChange={this.rememberMe}/> Remember me
                             </label>
                         </div>
                         <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
