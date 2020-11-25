@@ -33,7 +33,7 @@ class ActiveArticle extends Component {
                     <div className="carousel slide" id="myCarousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src={article.keystone_image_1x} alt={article.news_id} preserveAspectRatio="xMidYMid slice" style={{width: "100%", height: "100%"}}/>
+                                <img src={article.keystone_image_2x} alt={article.news_id} preserveAspectRatio="xMidYMid slice" style={{width: "100%", height: "100%"}}/>
                             </div>
                         </div>
                     </div>
