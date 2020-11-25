@@ -10,8 +10,11 @@ export default function updateCommentContent(data) {
         })
         .then(response => response.json())
         .then(response => {
-            console.log(response)
-            dispatch({ type: 'UPDATE_COMMENT', content: response.content, commentId: response.id, article: response.article, user: response.user })
+            if (!response.message) {
+                dispatch({ type: 'UPDATE_COMMENT', content: response.content, commentId: response.id, article: response.article, user: response.user })
+            } else {
+                dispatch({ type: 'ADD_ERROR', message: response.message})
+            }
         })
     }
   }
