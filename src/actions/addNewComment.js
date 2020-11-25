@@ -10,7 +10,8 @@ export default function addNewComment(data) {
         })
         .then(response => response.json())
         .then(response => {
-            dispatch({ type: 'ADD_COMMENT', comment: response.content, user: response.user, article: response.article })
+            console.log(response)
+            dispatch({ type: 'ADD_COMMENT', content: response.content, id: response.id, user: response.user, article: response.article })
         })
     }
   }
