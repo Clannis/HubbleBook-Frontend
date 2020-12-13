@@ -10,7 +10,11 @@ export default function login(user) {
         })
         .then(response => response.json())
         .then(response => {
-            dispatch({ type: 'LOGIN', user: response.user, token: response.token, rememberMe: rememberMe })
+            if (!response.errors) {
+                dispatch({ type: 'LOGIN', user: response.user, token: response.token, rememberMe: rememberMe })
+            } else {
+                alert(`${response.errors}`)
+            }
         })
     }
   }
