@@ -1,7 +1,7 @@
 export default function fetchNewUser(newUser) {
     return (dispatch) => {
       dispatch({ type: 'START_REQUESTING' });
-      fetch(`http://hubblebook-api.herokuapp.com/users`,{
+      fetch(`https://hubblebook-api.herokuapp.com/users`,{
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

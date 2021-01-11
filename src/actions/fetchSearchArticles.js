@@ -2,7 +2,7 @@ export default function fetchSearchArticles(search) {
     return (dispatch) => {
       dispatch({ type: 'START_REQUESTING'})
       dispatch({ type: 'START_SEARCH' })
-      fetch('http://hubblebook-api.herokuapp.com/search', {
+      fetch('https://hubblebook-api.herokuapp.com/search', {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

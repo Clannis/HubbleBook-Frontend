@@ -1,7 +1,7 @@
 export default function login(user) {
     const rememberMe = user.rememberMe
     return (dispatch) => {
-        fetch('http://hubblebook-api.herokuapp.com/login', {
+        fetch('https://hubblebook-api.herokuapp.com/login', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json'

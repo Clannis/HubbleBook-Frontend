@@ -6,7 +6,7 @@ export default function addNewComment(data) {
         userToken = sessionStorage.token
     }
     return (dispatch) => {
-        fetch(`http://hubblebook-api.herokuapp.com/articles/${data.article_id}/comments`, {
+        fetch(`https://hubblebook-api.herokuapp.com/articles/${data.article_id}/comments`, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

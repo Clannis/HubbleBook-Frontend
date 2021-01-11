@@ -6,7 +6,7 @@ export default function updateCommentContent(data) {
         userToken = sessionStorage.token
     }
     return (dispatch) => {
-        fetch(`http://hubblebook-api.herokuapp.com/comments/${data.commentId}`, {
+        fetch(`https://hubblebook-api.herokuapp.com/comments/${data.commentId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

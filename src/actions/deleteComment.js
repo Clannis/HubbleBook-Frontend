@@ -6,7 +6,7 @@ export default function deleteComment(id) {
         userToken = sessionStorage.token
     }
     return (dispatch) => {
-        fetch(`http://hubblebook-api.herokuapp.com/comments/${id}`, {
+        fetch(`https://hubblebook-api.herokuapp.com/comments/${id}`, {
             method: 'DELETE', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
